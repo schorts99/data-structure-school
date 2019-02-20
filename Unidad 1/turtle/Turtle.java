@@ -42,7 +42,118 @@ public class Turtle {
 		StdDraw.line(oldx, oldy, x, y);
 	}
 
-	// move backward the given amoun, with the pen down
+	public void goForwardWithColors(double steps, Color[] colors, double changeEvery) {
+		double
+			oldx = x,
+			oldy = y,
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x += changeEvery * Math.cos(Math.toRadians(angle));
+		y += changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);		
+		if (missingSteps > 0) goForwardWithColors(missingSteps);	
+		else StdDraw.setPenColor();
+	}
+
+	public void goForwardWithColors(double steps, Color[] colors) {
+		double
+			oldx = x,
+			oldy = y,
+			changeEvery = Math.ceil(steps/colors.length),
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x += changeEvery * Math.cos(Math.toRadians(angle));
+		y += changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);		
+		if (missingSteps > 0) goForwardWithColors(missingSteps);		
+		else StdDraw.setPenColor();
+	}
+
+	public void goForwardWithColors(double steps, double changeEvery) {
+		Color[] colors = {
+			StdDraw.BLACK,
+			StdDraw.BLUE,
+			StdDraw.CYAN,
+			StdDraw.DARK_GRAY,
+			StdDraw.GRAY,
+			StdDraw.GREEN,
+			StdDraw.LIGHT_GRAY,
+			StdDraw.MAGENTA,
+			StdDraw.ORANGE,
+			StdDraw.PINK,
+			StdDraw.RED,
+			StdDraw.YELLOW,
+			StdDraw.WHITE,
+			StdDraw.BOOK_BLUE,
+			StdDraw.BOOK_LIGHT_BLUE,
+			StdDraw.BOOK_RED,
+			StdDraw.PRINCETON_ORANGE
+		};
+		double
+			oldx = x,
+			oldy = y,
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x += changeEvery * Math.cos(Math.toRadians(angle));
+		y += changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);
+		if (missingSteps > 0) goForwardWithColors(missingSteps);
+		else StdDraw.setPenColor();
+	}
+
+	public void goForwardWithColors(double steps) {
+		Color[] colors = {
+			StdDraw.BLACK,
+			StdDraw.BLUE,
+			StdDraw.CYAN,
+			StdDraw.DARK_GRAY,
+			StdDraw.GRAY,
+			StdDraw.GREEN,
+			StdDraw.LIGHT_GRAY,
+			StdDraw.MAGENTA,
+			StdDraw.ORANGE,
+			StdDraw.PINK,
+			StdDraw.RED,
+			StdDraw.YELLOW,
+			StdDraw.WHITE,
+			StdDraw.BOOK_BLUE,
+			StdDraw.BOOK_LIGHT_BLUE,
+			StdDraw.BOOK_RED,
+			StdDraw.PRINCETON_ORANGE
+		};
+		double
+			oldx = x,
+			oldy = y,
+			changeEvery = Math.ceil(steps/colors.length),
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x += changeEvery * Math.cos(Math.toRadians(angle));
+		y += changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);
+		if (missingSteps > 0) goForwardWithColors(missingSteps);
+		else StdDraw.setPenColor();
+	}
+
 	public void goBackward(double steps) {
 		double
 			oldx = x,
@@ -50,6 +161,118 @@ public class Turtle {
 		x -= steps * Math.cos(Math.toRadians(angle));
 		y -= steps * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);
+	}
+
+	public void goBackwardWithColors(double steps, Color[] colors, double changeEvery) {
+		double
+			oldx = x,
+			oldy = y,
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x -= changeEvery * Math.cos(Math.toRadians(angle));
+		y -= changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);		
+		if (missingSteps > 0) goBackwardWithColors(missingSteps);	
+		else StdDraw.setPenColor();
+	}
+
+	public void goBackwardWithColors(double steps, Color[] colors) {
+		double
+			oldx = x,
+			oldy = y,
+			changeEvery = Math.ceil(steps/colors.length),
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x -= changeEvery * Math.cos(Math.toRadians(angle));
+		y -= changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);		
+		if (missingSteps > 0) goBackwardWithColors(missingSteps);		
+		else StdDraw.setPenColor();
+	}
+
+	public void goBackwardWithColors(double steps, double changeEvery) {
+		Color[] colors = {
+			StdDraw.BLACK,
+			StdDraw.BLUE,
+			StdDraw.CYAN,
+			StdDraw.DARK_GRAY,
+			StdDraw.GRAY,
+			StdDraw.GREEN,
+			StdDraw.LIGHT_GRAY,
+			StdDraw.MAGENTA,
+			StdDraw.ORANGE,
+			StdDraw.PINK,
+			StdDraw.RED,
+			StdDraw.YELLOW,
+			StdDraw.WHITE,
+			StdDraw.BOOK_BLUE,
+			StdDraw.BOOK_LIGHT_BLUE,
+			StdDraw.BOOK_RED,
+			StdDraw.PRINCETON_ORANGE
+		};
+		double
+			oldx = x,
+			oldy = y,
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x -= changeEvery * Math.cos(Math.toRadians(angle));
+		y -= changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);
+		if (missingSteps > 0) goBackwardWithColors(missingSteps);
+		else StdDraw.setPenColor();
+	}
+
+	public void goBackwardWithColors(double steps) {
+		Color[] colors = {
+			StdDraw.BLACK,
+			StdDraw.BLUE,
+			StdDraw.CYAN,
+			StdDraw.DARK_GRAY,
+			StdDraw.GRAY,
+			StdDraw.GREEN,
+			StdDraw.LIGHT_GRAY,
+			StdDraw.MAGENTA,
+			StdDraw.ORANGE,
+			StdDraw.PINK,
+			StdDraw.RED,
+			StdDraw.YELLOW,
+			StdDraw.WHITE,
+			StdDraw.BOOK_BLUE,
+			StdDraw.BOOK_LIGHT_BLUE,
+			StdDraw.BOOK_RED,
+			StdDraw.PRINCETON_ORANGE
+		};
+		double
+			oldx = x,
+			oldy = y,
+			changeEvery = Math.ceil(steps/colors.length),
+			missingSteps = steps-changeEvery;
+		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		try {
+			setPenColor(colors[randomColor]);
+		} catch(ArrayIndexOutOfBoundsException err) {
+			setPenColor(colors[randomColor-1]);
+		}
+		x -= changeEvery * Math.cos(Math.toRadians(angle));
+		y -= changeEvery * Math.sin(Math.toRadians(angle));
+		StdDraw.line(oldx, oldy, x, y);
+		if (missingSteps > 0) goBackwardWithColors(missingSteps);
+		else StdDraw.setPenColor();
 	}
 
 	// copy to onscreen
@@ -89,22 +312,14 @@ public class Turtle {
 	
 	// sample client for testing
 	public static void main(String[] args) {
-		double x0 = 0.5;
-		double y0 = 0.0;
-		double a0 = 60.0;
-		double step = Math.sqrt(3)/2;        
-		Turtle turtle = new Turtle(x0, y0, a0);
-		turtle.setPenColor(new Color(255,0,0));
-		turtle.goForward(step);
-		turtle.turnLeft(120.0);
-
-		turtle.setPenColor(new Color(0,255,0));
-		turtle.goForward(step);
-		turtle.turnLeft(120.0);
-
-		turtle.setPenColor(new Color(0,0,255));
-		turtle.goForward(step);
-		turtle.turnLeft(120.0);
+		var turtle = new Turtle(0, 0, 0);
+    turtle.setXscale(-100, 100);
+		turtle.setYscale(-100, 100);
+    turtle.goForwardWithColors(20);
+    turtle.turnLeft(90);
+    turtle.goForward(20);
+    turtle.turnRight(90);
+    turtle.goForwardWithColors(20);
+    turtle.goBackwardWithColors(40);
 	}
-
 }
