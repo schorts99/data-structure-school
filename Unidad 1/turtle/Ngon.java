@@ -29,6 +29,9 @@ public class Ngon {
 			case "normal":
 				normal(preguntarLados(read));
 				break;
+			case "invertido":
+				invertido(preguntarLados(read));
+				break;
 			default: throw new Validaciones.OpcionPintadoInvalida();
 		}
 	}
@@ -59,11 +62,21 @@ public class Ngon {
 
 	public void normal(int lados) {
 		double angle = 360.0 / lados;
-		double step  = Math.sin(Math.toRadians(angle/4.0));   // sin(pi/n)
-		Turtle turtle = new Turtle(0.5, 0.0, angle/4.0);
+		double step  = Math.sin(Math.toRadians(angle/2.0));   // sin(pi/n)
+		Turtle turtle = new Turtle(0.5, 0.0, angle/2.0);
 		for (int i = 0; i < lados; i++) {
 			turtle.goForward(step);
 			turtle.turnLeft(angle);
+		}
+	}
+
+	public void invertido(int lados) {
+		double angle = 360.0 / lados;
+		double step  = Math.sin(Math.toRadians(angle/2.0));   // sin(pi/n)
+		Turtle turtle = new Turtle(0.5, 0.0, angle/2.0);
+		for (int i = 0; i < lados; i++) {
+			turtle.goForward(step);
+			turtle.turnRight(-angle);
 		}
 	}
 
