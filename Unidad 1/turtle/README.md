@@ -10,11 +10,23 @@ Agregar nuevos métodos a la clase Turtle y Ngon para mejorar su funcionalidad
 
 ### Instrucciones:
 
-* Windows:
-	* Ejecutar run.bat, el script compilara y posteriormente ejecutara la clase Prueba y sus dependencias
-* Linux/Mac:
-  1. Dar permisos de ejecucución a run.sh ejecutando en la terminal estando previamente en la carpeta del proyecto
-  2. Ejecutar run.sh
+1. Compilar y ejecutar:
+	* Windows:
+		* Ejecutar run.bat, el script compilara y posteriormente ejecutara la clase Prueba y sus dependencias
+	* Linux/Mac:
+		1. Dar permisos de ejecucución a run.sh ejecutando en la terminal estando previamente en la carpeta del proyecto
+		2. Ejecutar run.sh
+2. Ingresar el método de pintado:
+	* Métodos disponibles:
+		* normal
+		* normal colorido
+		* invertido
+		* invertido colorido
+		* reversa
+		* reversa colorido
+		* reversa musical
+3. Ingresa el número de lados de la figura deseada
+
 ```bash
 $ sudo chmod+x run.sh
 $ ./run.sh
@@ -94,14 +106,6 @@ goBackwardWithColors(double steps, Color[] colors, double changeEvery)
 
 ## Ngon
 
-* Ngon:
-	* Constructor de clase.
-	* Parametros recibidos:
-		* numero_figuras: El número de figuras que pintara en el canvas.
-```java
-Ngon(byte numero_figuras)
-```
----
 * seleccionarMetodo:
 	* Valida el método de entrada seleccionado para el pintado.
 	* Parametros recibidos:
@@ -130,6 +134,14 @@ preguntarMetodo()
 normal(int lados)
 ```
 ---
+* normalColorido:
+	* Esté método hace el pintado normal implementando turnLeft de Turtle y dejando un rastro de colores a su paso.
+	* Parametros recibidos:
+		* lados: El número de lados de la figura a dibujar.
+```java
+normalColorido(int lados)
+```
+---
 * invertido:
 	* Esté método hace uso de turnRight de la clase Turtle.
 	* Parametros recibidos:
@@ -137,11 +149,35 @@ normal(int lados)
 ```java
 invertido(int lados)
 ```
+---
+* invertidoColorido:
+	* Esté método hace uso de turnRight de la clase Turtle y dejando un rastro de colores a su paso.
+	* Parametros recibidos:
+		* lados: El número de lados de la figura a dibujar.
+```java
+invertidoColorido(int lados)
+```
+---
+* reversa:
+	* Esté método hace uso de turnLeft y goBackward de la clase Turtle.
+	* Parametros recibidos:
+		* lados: El número de lados de la figura a dibujar.
+```java
+reversa(int lados)
+```
+---
+* reversaColorido:
+	* Esté método hace uso de turnLeft y goBackwardWithColors de la clase Turtle.
+	* Parametros recibidos:
+		* lados: El número de lados de la figura a dibujar.
+```java
+reversaColorido(int lados)
+```
+
+---
 
 ### Validaciones
 
-* NumeroFigurasInvalido:
-	* Se requiere un mínimo de 1 figura y un máximo de 4 figuras.
 * OpcionPintadoInvalida:
 	* Se manejan 2 tipos de pintado:
 		* Normal: Usando el método turnLeft de Turtle.

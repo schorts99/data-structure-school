@@ -47,7 +47,7 @@ public class Turtle {
 			oldx = x,
 			oldy = y,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -56,7 +56,7 @@ public class Turtle {
 		x += changeEvery * Math.cos(Math.toRadians(angle));
 		y += changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);		
-		if (missingSteps > 0) goForwardWithColors(missingSteps);	
+		if (missingSteps > 0.001) goForwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -66,7 +66,7 @@ public class Turtle {
 			oldy = y,
 			changeEvery = Math.ceil(steps/colors.length),
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -75,7 +75,7 @@ public class Turtle {
 		x += changeEvery * Math.cos(Math.toRadians(angle));
 		y += changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);		
-		if (missingSteps > 0) goForwardWithColors(missingSteps);		
+		if (missingSteps > 0.001) goForwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -103,7 +103,7 @@ public class Turtle {
 			oldx = x,
 			oldy = y,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -112,7 +112,7 @@ public class Turtle {
 		x += changeEvery * Math.cos(Math.toRadians(angle));
 		y += changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);
-		if (missingSteps > 0) goForwardWithColors(missingSteps);
+		if (missingSteps > 0.001) goForwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -139,9 +139,9 @@ public class Turtle {
 		double
 			oldx = x,
 			oldy = y,
-			changeEvery = Math.ceil(steps/colors.length),
+			changeEvery = steps/colors.length,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -150,7 +150,7 @@ public class Turtle {
 		x += changeEvery * Math.cos(Math.toRadians(angle));
 		y += changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);
-		if (missingSteps > 0) goForwardWithColors(missingSteps);
+		if (missingSteps > 0.001) goForwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -168,7 +168,7 @@ public class Turtle {
 			oldx = x,
 			oldy = y,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -177,7 +177,7 @@ public class Turtle {
 		x -= changeEvery * Math.cos(Math.toRadians(angle));
 		y -= changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);		
-		if (missingSteps > 0) goBackwardWithColors(missingSteps);	
+		if (missingSteps > 0.001) goBackwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -185,9 +185,9 @@ public class Turtle {
 		double
 			oldx = x,
 			oldy = y,
-			changeEvery = Math.ceil(steps/colors.length),
+			changeEvery = steps/colors.length,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length-1) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -196,7 +196,7 @@ public class Turtle {
 		x -= changeEvery * Math.cos(Math.toRadians(angle));
 		y -= changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);		
-		if (missingSteps > 0) goBackwardWithColors(missingSteps);		
+		if (missingSteps > 0.001) goBackwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -224,7 +224,7 @@ public class Turtle {
 			oldx = x,
 			oldy = y,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -233,7 +233,7 @@ public class Turtle {
 		x -= changeEvery * Math.cos(Math.toRadians(angle));
 		y -= changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);
-		if (missingSteps > 0) goBackwardWithColors(missingSteps);
+		if (missingSteps > 0.001) goBackwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 
@@ -260,9 +260,9 @@ public class Turtle {
 		double
 			oldx = x,
 			oldy = y,
-			changeEvery = Math.ceil(steps/colors.length),
+			changeEvery = steps/colors.length,
 			missingSteps = steps-changeEvery;
-		byte randomColor = (byte) ((Math.random() * colors.length) + 1);
+		byte randomColor = (byte) (Math.random() * colors.length);
 		try {
 			setPenColor(colors[randomColor]);
 		} catch(ArrayIndexOutOfBoundsException err) {
@@ -271,7 +271,7 @@ public class Turtle {
 		x -= changeEvery * Math.cos(Math.toRadians(angle));
 		y -= changeEvery * Math.sin(Math.toRadians(angle));
 		StdDraw.line(oldx, oldy, x, y);
-		if (missingSteps > 0) goBackwardWithColors(missingSteps);
+		if (missingSteps > 0.001) goBackwardWithColors(missingSteps);
 		else StdDraw.setPenColor();
 	}
 

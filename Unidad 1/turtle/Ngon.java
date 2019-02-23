@@ -14,20 +14,10 @@ import java.util.Scanner;
 
 public class Ngon {
 	private Scanner read;
-	private byte
-		numero_figuras,
-		index;
 
-	public Ngon(byte numero_figuras) throws Validaciones.NumeroFigurasInvalido {
-		if (numero_figuras <= 4 && numero_figuras > 0) {
-			this.numero_figuras = numero_figuras;
-			read = new Scanner(System.in);
-			for(index = 0; index < numero_figuras; index++) {
-				preguntarMetodo();
-			}
-		} else {
-			throw new Validaciones.NumeroFigurasInvalido();
-		}
+	public Ngon() {
+		read = new Scanner(System.in);
+		preguntarMetodo();
 	}
 
 	public void seleccionarMetodo(String metodo) throws Validaciones.OpcionPintadoInvalida {
@@ -43,6 +33,12 @@ public class Ngon {
 				break;
 			case "invertido colorido":
 				invertidoColorido(preguntarLados());
+				break;
+			case "reversa":
+				reversa(preguntarLados());
+				break;
+			case "reversa colorido":
+				reversaColorido(preguntarLados());
 				break;
 			default: throw new Validaciones.OpcionPintadoInvalida();
 		}
@@ -112,13 +108,27 @@ public class Ngon {
 		}
 	}
 
-	public static class Validaciones {
-		public static class NumeroFigurasInvalido extends Exception {
-			public NumeroFigurasInvalido() {
-				super("El número de figuras ingresado no es válido");
-			}
+	public void reversa(int lados) {
+		double angle = 360.0 / lados;
+		double step  = Math.sin(Math.toRadians(angle/2.0));
+		Turtle turtle = new Turtle(0.5, 0.0, -angle/2.0);
+		for (int i = 0; i < lados; i++) {
+			turtle.goBackward(step);
+			turtle.turnLeft(-angle);
 		}
+	}
 
+	public void reversaColorido(int lados) {
+		double angle = 360.0 / lados;
+		double step  = Math.sin(Math.toRadians(angle/2.0));
+		Turtle turtle = new Turtle(0.5, 0.0, -angle/2.0);
+		for (int i = 0; i < lados; i++) {
+			turtle.goBackwardWithColors(step);
+			turtle.turnLeft(-angle);
+		}
+	}
+
+	public static class Validaciones {
 		public static class OpcionPintadoInvalida extends Exception {
 			public OpcionPintadoInvalida() {
 				super("La opción de pintado seleccionada es invalida");
