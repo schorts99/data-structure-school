@@ -106,25 +106,20 @@ Ngon(byte numero_figuras)
 	* Valida el método de entrada seleccionado para el pintado.
 	* Parametros recibidos:
 		*	método: Método seleccionado.
-		* read: una instancia de Scanner para la entrada de los datos.
 ```java
-seleccionarMetodo(String metodo, Scanner read)
+seleccionarMetodo(String metodo)
 ```
 ---
 * preguntarLados:
 	* Valida la entrada del usuario y manda a llamar al método de pintado previamente seleccionado.
-	* Parametros recibidos:
-		* read: una instancia de Scanner para la entrada de los datos.
 ```java
-preguntarLados(Scanner read)
+preguntarLados()
 ```
 ---
 * preguntarMetodo:
 	* Maneja la entrada del usuario del método de pintado a utilizar.
-	* Parametros recibidos:
-		* read: una instancia de Scanner para la entrada de los datos.
 ```java
-preguntarMetodo(Scanner read)
+preguntarMetodo()
 ```
 ---
 * normal:

@@ -1,2 +1,3 @@
 javac -d bin Prueba.java
-java -cp bin Prueba
+set /p numero_figuras=Ingresa el número de figuras a dibujar: 
+java -cp bin Prueba %numero_figuras%!

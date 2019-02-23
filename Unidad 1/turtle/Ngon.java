@@ -13,30 +13,42 @@
 import java.util.Scanner;
 
 public class Ngon {
+	private Scanner read;
+	private byte
+		numero_figuras,
+		index;
+
 	public Ngon(byte numero_figuras) throws Validaciones.NumeroFigurasInvalido {
 		if (numero_figuras <= 4 && numero_figuras > 0) {
-			var read = new Scanner(System.in);
-			for(byte index = 0; index < numero_figuras; index++) {
-				preguntarMetodo(read);
+			this.numero_figuras = numero_figuras;
+			read = new Scanner(System.in);
+			for(index = 0; index < numero_figuras; index++) {
+				preguntarMetodo();
 			}
 		} else {
 			throw new Validaciones.NumeroFigurasInvalido();
 		}
 	}
 
-	public void seleccionarMetodo(String metodo, Scanner read) throws Validaciones.OpcionPintadoInvalida {
-		switch(metodo) {
+	public void seleccionarMetodo(String metodo) throws Validaciones.OpcionPintadoInvalida {
+		switch(metodo.toLowerCase()) {
 			case "normal":
-				normal(preguntarLados(read));
+				normal(preguntarLados());
+				break;
+			case "normal colorido":
+				normalColorido(preguntarLados());
 				break;
 			case "invertido":
-				invertido(preguntarLados(read));
+				invertido(preguntarLados());
+				break;
+			case "invertido colorido":
+				invertidoColorido(preguntarLados());
 				break;
 			default: throw new Validaciones.OpcionPintadoInvalida();
 		}
 	}
 
-	public int preguntarLados(Scanner read) {
+	public int preguntarLados() {
 		int lados = 0;
 		do {
 			System.out.print("Ingresa el número de lados: ");
@@ -49,14 +61,14 @@ public class Ngon {
 		return lados;
 	}
 
-	public void preguntarMetodo(Scanner read) {
+	public void preguntarMetodo() {
 		try {
 			System.out.print("Ingresa el método de pintado: ");
-			var metodo = read.next();
-			seleccionarMetodo(metodo, read);
+			var metodo = read.nextLine();
+			seleccionarMetodo(metodo);
 		} catch(Validaciones.OpcionPintadoInvalida err) {
 			System.err.println("\nIngresa un método de pintado valido");
-			preguntarMetodo(read);
+			preguntarMetodo();
 		}
 	}
 
@@ -70,12 +82,32 @@ public class Ngon {
 		}
 	}
 
+	public void normalColorido(int lados) {
+		double angle = 360.0 / lados;
+		double step  = Math.sin(Math.toRadians(angle/2.0));
+		Turtle turtle = new Turtle(0.5, 0.0, angle/2.0);
+		for (int i = 0; i < lados; i++) {
+			turtle.goForwardWithColors(step);
+			turtle.turnLeft(angle);
+		}
+	}
+
 	public void invertido(int lados) {
 		double angle = 360.0 / lados;
-		double step  = Math.sin(Math.toRadians(angle/2.0));   // sin(pi/n)
+		double step  = Math.sin(Math.toRadians(angle/2.0));   
 		Turtle turtle = new Turtle(0.5, 0.0, angle/2.0);
 		for (int i = 0; i < lados; i++) {
 			turtle.goForward(step);
+			turtle.turnRight(-angle);
+		}
+	}
+
+	public void invertidoColorido(int lados) {
+		double angle = 360.0 / lados;
+		double step  = Math.sin(Math.toRadians(angle/2.0));
+		Turtle turtle = new Turtle(0.5, 0.0, angle/2.0);
+		for (int i = 0; i < lados; i++) {
+			turtle.goForwardWithColors(step);
 			turtle.turnRight(-angle);
 		}
 	}
