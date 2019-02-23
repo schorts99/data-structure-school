@@ -1,2 +1,2 @@
-javac -d bin Turtle.java
-java -cp bin Turtle
+javac -d bin Prueba.java
+java -cp bin Prueba

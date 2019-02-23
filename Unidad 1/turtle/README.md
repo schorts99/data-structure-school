@@ -1,7 +1,7 @@
-# Turtle modificado
+# Turtle y Ngon modificado
 
 ### Proposito del proyecto:
-Agregar nuevos métodos a la clase Turtle para mejorar su funcionalidad
+Agregar nuevos métodos a la clase Turtle y Ngon para mejorar su funcionalidad
 
 ### Versión del proyecto: 0.0.2
 
@@ -9,7 +9,7 @@ Agregar nuevos métodos a la clase Turtle para mejorar su funcionalidad
 
 ### Instrucciones:
 * Windows:
-...Ejecutar run.bat, el script compilara y posteriormente ejecutara la clase Turtle
+    * Ejecutar run.bat, el script compilara y posteriormente ejecutara la clase Prueba y sus dependencias
 * Linux/Mac:
   1. Dar permisos de ejecucución a run.sh ejecutando en la terminal estando previamente en la carpeta del proyecto
   2. Ejecutar run.sh
