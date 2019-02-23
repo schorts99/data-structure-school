@@ -1,6 +1,7 @@
 # Turtle y Ngon modificado
 
 ### Proposito del proyecto:
+
 Agregar nuevos métodos a la clase Turtle y Ngon para mejorar su funcionalidad
 
 ### Versión del proyecto: 0.0.2
@@ -8,8 +9,9 @@ Agregar nuevos métodos a la clase Turtle y Ngon para mejorar su funcionalidad
 ### Áutores: Jorge Castillo Díaz
 
 ### Instrucciones:
+
 * Windows:
-    * Ejecutar run.bat, el script compilara y posteriormente ejecutara la clase Prueba y sus dependencias
+	* Ejecutar run.bat, el script compilara y posteriormente ejecutara la clase Prueba y sus dependencias
 * Linux/Mac:
   1. Dar permisos de ejecucución a run.sh ejecutando en la terminal estando previamente en la carpeta del proyecto
   2. Ejecutar run.sh
@@ -19,6 +21,9 @@ $ ./run.sh
 ```
 
 ## Métodos agregados
+
+## Turtle
+
 * turnRight:
   Este método le da la habilidad a la tortuga de girar a la derecha.
   * Parametros recibidos:
@@ -86,3 +91,63 @@ goBackwardWithColors(double steps, Color[] colors)
 ```java
 goBackwardWithColors(double steps, Color[] colors, double changeEvery)
 ```
+
+## Ngon
+
+* Ngon:
+	* Constructor de clase.
+	* Parametros recibidos:
+		* numero_figuras: El número de figuras que pintara en el canvas.
+```java
+Ngon(byte numero_figuras)
+```
+---
+* seleccionarMetodo:
+	* Valida el método de entrada seleccionado para el pintado.
+	* Parametros recibidos:
+		*	método: Método seleccionado.
+		* read: una instancia de Scanner para la entrada de los datos.
+```java
+seleccionarMetodo(String metodo, Scanner read)
+```
+---
+* preguntarLados:
+	* Valida la entrada del usuario y manda a llamar al método de pintado previamente seleccionado.
+	* Parametros recibidos:
+		* read: una instancia de Scanner para la entrada de los datos.
+```java
+preguntarLados(Scanner read)
+```
+---
+* preguntarMetodo:
+	* Maneja la entrada del usuario del método de pintado a utilizar.
+	* Parametros recibidos:
+		* read: una instancia de Scanner para la entrada de los datos.
+```java
+preguntarMetodo(Scanner read)
+```
+---
+* normal:
+	* Esté método hace el pintado normal implementando turnLeft de Turtle, inicialmente este era el método main.
+	* Parametros recibidos:
+		* lados: El número de lados de la figura a dibujar.
+```java
+normal(int lados)
+```
+---
+* invertido:
+	* Esté método hace uso de turnRight de la clase Turtle.
+	* Parametros recibidos:
+		* lados: El número de lados de la figura a dibujar.
+```java
+invertido(int lados)
+```
+
+### Validaciones
+
+* NumeroFigurasInvalido:
+	* Se requiere un mínimo de 1 figura y un máximo de 4 figuras.
+* OpcionPintadoInvalida:
+	* Se manejan 2 tipos de pintado:
+		* Normal: Usando el método turnLeft de Turtle.
+		* Invertido: Usando el método turnRight de Turtle.
