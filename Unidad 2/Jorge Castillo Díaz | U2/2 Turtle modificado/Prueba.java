@@ -19,6 +19,9 @@ public class Prueba {
       case "borrarPasos":
         eraseSteps();
         break;
+      case "dejarPintar":
+        jumpStepsTest();
+        break;
       default:
         System.err.println("La prueba indicada no existe");
     }
@@ -76,5 +79,13 @@ public class Prueba {
     turtle.goForward(1);
     turtle.eraseSteps(0.5);
     StdDraw.text(0.5, 0.6, "Se ha borrado la mitad de la línea");
+  }
+
+  public static void jumpStepsTest() {
+    var turtle = new Turtle(0, 0.5, 0);
+    turtle.goForward(0.33);
+    turtle.jumpSteps(0.33);
+    turtle.goForward(0.33);
+    StdDraw.text(0.5, 0.6, "Salta 1/3 línea");
   }
 }

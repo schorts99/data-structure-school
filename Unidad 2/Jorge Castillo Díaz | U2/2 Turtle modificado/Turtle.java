@@ -282,6 +282,13 @@ public class Turtle {
 		setPenColor(backupColor);
 	}
 
+	public void jumpSteps(double steps) {
+		Color backupColor = StdDraw.getPenColor();
+		setPenColor(StdDraw.WHITE);
+		goForward(steps);
+		setPenColor(backupColor);
+	}
+
 	// copy to onscreen
 	public void show() {
 		StdDraw.show();
