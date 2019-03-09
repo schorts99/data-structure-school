@@ -8,6 +8,9 @@ public class Prueba {
       case "girar180":
         prueba.turn180Test();
         break;
+      case "retroceder":
+        prueba.goBackTest();
+        break;
       default:
         System.err.println("La prueba indicada no existe");
     }
@@ -38,5 +41,11 @@ public class Prueba {
     turtle.turnAround();
     turtle.goForward(0.5);
     StdDraw.text(0.7, 0.6, "Regresa sobre sus propios pasos");
+  }
+
+  public void goBackTest() {
+    var turtle = new Turtle(0.5, 0.5, 0);
+    turtle.goBackward(0.4);
+    StdDraw.text(0.7, 0.6, "Dirección inicial ->");
   }
 }
