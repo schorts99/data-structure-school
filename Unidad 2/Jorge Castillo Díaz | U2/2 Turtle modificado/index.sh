@@ -5,7 +5,9 @@ printf "\nPruebas disponibles:\n"
 printf "* girarDerecha\n"
 printf "* girar180\n"
 printf "* retroceder\n"
-printf "* avanzarColores\n\n"
+printf "* avanzarColores\n"
+printf "* retrocederColores\n\n"
 read -p "Ingrese la prueba a ejecutar: " prueba
+
 java -cp ../:bin Prueba $prueba
 clear

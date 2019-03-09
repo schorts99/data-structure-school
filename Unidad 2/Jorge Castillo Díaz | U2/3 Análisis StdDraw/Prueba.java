@@ -15,7 +15,7 @@ public class Prueba {
   }
 
   private void changeWindowSizeTest() {
-    StdDraw.setCanvasSize(600, 600);
+    StdDraw.setCanvasSize(800, 800);
     StdDraw.text(0.5, 0.5, "Nuevo tamaño de ventana");
   }
 
