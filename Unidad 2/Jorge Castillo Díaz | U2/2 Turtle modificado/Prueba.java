@@ -74,7 +74,7 @@ public class Prueba {
   public static void eraseSteps() {
     var turtle = new Turtle(0, 0.5, 0);
     turtle.goForward(1);
-    turtle.eraseSteps(1);
-    StdDraw.text(0.5, 0.6, "La línea horizontal inicialmente dibujada se ha borrado");
+    turtle.eraseSteps(0.5);
+    StdDraw.text(0.5, 0.6, "Se ha borrado la mitad de la línea");
   }
 }

@@ -275,7 +275,7 @@ public class Turtle {
 		else StdDraw.setPenColor();
 	}
 
-	public void eraseSteps(float steps) {
+	public void eraseSteps(double steps) {
 		Color backupColor = StdDraw.getPenColor();
 		setPenColor(StdDraw.WHITE);
 		goBackward(steps);
