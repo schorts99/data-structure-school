@@ -11,6 +11,9 @@ public class Prueba {
       case "retroceder":
         prueba.goBackTest();
         break;
+      case "avanzarColores":
+        prueba.goForwardWithColorsTest();
+        break;
       default:
         System.err.println("La prueba indicada no existe");
     }
@@ -47,5 +50,12 @@ public class Prueba {
     var turtle = new Turtle(0.5, 0.5, 0);
     turtle.goBackward(0.4);
     StdDraw.text(0.7, 0.6, "Dirección inicial ->");
+  }
+
+  public void goForwardWithColorsTest() {
+    var turtle = new Turtle(0, 0.5, 0);
+    StdDraw.setPenRadius(0.1);
+    turtle.goForwardWithColors(1);
+    StdDraw.text(0.7, 0.6, "Dibuja una línea de colores");
   }
 }
