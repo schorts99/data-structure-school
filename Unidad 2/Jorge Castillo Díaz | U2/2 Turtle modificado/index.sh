@@ -8,7 +8,7 @@ printf "* retroceder\n"
 printf "* avanzarColores\n"
 printf "* retrocederColores\n"
 printf "* borrarPasos\n"
-printf "* dejarPintar\n\n"
+printf "* moverA\n\n"
 read -p "Ingrese la prueba a ejecutar: " prueba
 
 java -cp ../:bin Prueba $prueba

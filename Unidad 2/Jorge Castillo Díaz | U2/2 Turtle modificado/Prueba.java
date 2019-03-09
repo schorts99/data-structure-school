@@ -22,6 +22,9 @@ public class Prueba {
       case "dejarPintar":
         jumpStepsTest();
         break;
+      case "moverA":
+        jumpToTest();
+        break;
       default:
         System.err.println("La prueba indicada no existe");
     }
@@ -87,5 +90,13 @@ public class Prueba {
     turtle.jumpSteps(0.33);
     turtle.goForward(0.33);
     StdDraw.text(0.5, 0.6, "Salta 1/3 línea");
+  }
+
+  public static void jumpToTest() {
+    var turtle = new Turtle(0, 0.4, 0);
+    turtle.goForward(0.5);
+    turtle.jumpTo(0.5, 0.6);
+    turtle.goForward(0.5);
+    StdDraw.text(0.5, 0.3, "Salta unos pasos hacía abajo");
   }
 }

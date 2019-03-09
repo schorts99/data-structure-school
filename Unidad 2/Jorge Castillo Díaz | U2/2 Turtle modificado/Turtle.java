@@ -289,6 +289,11 @@ public class Turtle {
 		setPenColor(backupColor);
 	}
 
+	public void jumpTo(double positionX, double positionY) {
+		x = positionX;
+		y = positionY;
+	}
+
 	// copy to onscreen
 	public void show() {
 		StdDraw.show();
