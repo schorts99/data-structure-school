@@ -6,7 +6,7 @@
 2. Agregar nuevos métodos a la clase Turtle y realizar pruebas de los métodos agregados
 3. Probar la clase StdDraw
 
-### Versión del proyecto: 0.0.3
+### Versión del proyecto: 0.0.1
 
 ### Áutores: Jorge Castillo Díaz
 
