@@ -1,28 +1,30 @@
 public class Prueba {
   public static void main(String[] args) {
-		var prueba = new Prueba();
     switch(args[0]) {
       case "girarDerecha":
-        prueba.turnRightTest();
+        turnRightTest();
         break;
       case "girar180":
-        prueba.turn180Test();
+        turn180Test();
         break;
       case "retroceder":
-        prueba.goBackTest();
+        goBackTest();
         break;
       case "avanzarColores":
-        prueba.goForwardWithColorsTest();
+        goForwardWithColorsTest();
         break;
       case "retrocederColores":
-        prueba.goBackwardWithColorsTest();
+        goBackwardWithColorsTest();
+        break;
+      case "borrarPasos":
+        eraseSteps();
         break;
       default:
         System.err.println("La prueba indicada no existe");
     }
   }
   
-  public void turnRightTest() {
+  public static void turnRightTest() {
     var turtleL = new Turtle(0, 0.5, 0);
     turtleL.goForward(0.5);
     turtleL.turnLeft(90);
@@ -40,7 +42,7 @@ public class Prueba {
     StdDraw.text(0.7, 0.4, "90° Derecha");
   }
 
-  public void turn180Test() {
+  public static void turn180Test() {
     var turtle = new Turtle(0.5, 0.5, 0);
     turtle.goForward(0.3);
     turtle.setPenColor(StdDraw.RED);
@@ -49,23 +51,30 @@ public class Prueba {
     StdDraw.text(0.7, 0.6, "Regresa sobre sus propios pasos");
   }
 
-  public void goBackTest() {
+  public static void goBackTest() {
     var turtle = new Turtle(0.5, 0.5, 0);
     turtle.goBackward(0.4);
     StdDraw.text(0.7, 0.6, "Dirección inicial ->");
   }
 
-  public void goForwardWithColorsTest() {
+  public static void goForwardWithColorsTest() {
     var turtle = new Turtle(0.5, 0.5, 0);
     StdDraw.setPenRadius(0.1);
     turtle.goForwardWithColors(0.4);
     StdDraw.text(0.7, 0.6, "Dibuja una línea de colores");
   }
 
-  public void goBackwardWithColorsTest() {
+  public static void goBackwardWithColorsTest() {
     var turtle = new Turtle(0.5, 0.5, 0);
     StdDraw.setPenRadius(0.1);
     turtle.goBackwardWithColors(0.4);
     StdDraw.text(0.7, 0.6, "Dirección inicial ->");
+  }
+
+  public static void eraseSteps() {
+    var turtle = new Turtle(0, 0.5, 0);
+    turtle.goForward(1);
+    turtle.eraseSteps(1);
+    StdDraw.text(0.5, 0.6, "La línea horizontal inicialmente dibujada se ha borrado");
   }
 }
